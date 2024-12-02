@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7: Build a Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .progress-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-container label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        progress {
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .progress-container button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .progress-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Контейнер с ссылками, закрепленный внизу экрана */
+        .link-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 2px solid #ccc;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-container a {
+            display: inline-block;
+            margin: 5px 15px;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to right, #42a5f5, #1e88e5);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .link-container a:hover {
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Прогресс-бар -->
+    <div class="progress-container">
+        <label for="file-upload">File Upload Progress</label>
+        <progress id="file-upload" value="0" max="100"></progress>
+        <div id="progress-label">0% Completed</div>
+        <button onclick="startUpload()">Start Upload</button>
+    </div>
+
+    <!-- Контейнер для ссылок внизу экрана -->
+    <div class="link-container">
+        <a href="exercise1/index.html">Exercise1</a>
+        <a href="../exercise2.html">Exercise2</a>
+        <a href="../exercise3.html">Exercise3</a>
+        <a href="../exercise4.html">Exercise4</a>
+        <a href="../exercise5.html">Exercise5</a>
+        <a href="../exercise6.html">Exercise6</a>
+        <a href="../exercise7.html">Exercise7</a>
+    </div>
+
+    <script>
+        function startUpload() {
+            let progressBar = document.getElementById("file-upload");
+            let progressLabel = document.getElementById("progress-label");
+
+            let progress = 0;
+            let interval = setInterval(function() {
+                progress += 10; // Increase progress by 10 each time
+                progressBar.value = progress;
+                progressLabel.innerText = `${progress}% Completed`;
+
+                if (progress >= 100) {
+                    clearInterval(interval); // Stop the interval once it reaches 100%
+                    progressLabel.innerText = "Upload Complete!";
+                }
+            }, 500); // Update progress every 0.5 seconds
+        }
+    </script>
+
+</body>
+</html>

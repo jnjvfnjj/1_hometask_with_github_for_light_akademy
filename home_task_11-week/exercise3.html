@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(243, 243, 243, 0.1);
+            width: 400px;
+        }
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #00ff62;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="POST">
+        <h2>Event Registration</h2>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter a password" minlength="8" required>
+
+        <label for="event-date">Event Date:</label>
+        <input type="date" id="event-date" name="event-date">
+
+        <label for="event-type">Event Type:</label>
+        <select id="event-type" name="event-type" required>
+            <option value="">-- Select Event Type --</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="conference">Conference</option>
+        </select>
+
+        <button type="submit">Register</button>
+
+
+
+
+
+
+        <br><br><br><br><br>
+        <a href="exercise1/index.html">Exercise1</a><br>
+        <a href="../exercise2.html">exercise2</a><br>
+        <a href="../exercise3.html">exercise3</a><br>
+        <a href="../exercise4.html">exercise4</a><br>
+        <a href="../exercise5.html">exercise5</a><br>
+        <a href="../exercise6.html">exercise6</a><br>
+        <a href="../exercise7.html">exercise7</a>
+    </form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6: Modal Popup</title>
+    <style>
+        /* Общие стили страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #90caf9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Контейнер для ссылок */
+        .link-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Общие стили для ссылок */
+        .link-container a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to right, #42a5f5, #1e88e5);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Эффект наведения */
+        .link-container a:hover {
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Основной контент */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none; /* Скрыто по умолчанию */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .open-modal {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .open-modal:hover {
+            background-color: #0056b3;
+        }
+
+        .close-modal {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            background-color: #a71d2a;
+        }
+
+        input[type="checkbox"]:checked ~ .modal {
+            display: flex;
+        }
+    </style>
+</head>
+
+    <!-- Флажок для управления модальным окном -->
+    <input type="checkbox" id="modal-toggle" style="display: none;">
+
+    <!-- Кнопка для открытия модального окна -->
+    <label for="modal-toggle" class="open-modal">Click Me</label>
+
+    <!-- Модальное окно -->
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Welcome to the Modal</h2>
+            <p>This is a simple modal popup created with HTML and CSS.</p>
+            <!-- Кнопка для закрытия модального окна -->
+            <label for="modal-toggle" class="close-modal">Close</label>
+        </div>
+    </div>
+<body>
+    <br><br><br><br><br><br><br>
+    <!-- Контейнер для ссылок -->
+    <div class="link-container">
+        <a href="exercise1/index.html">Exercise1</a>
+        <a href="../exercise2.html">Exercise2</a>
+        <a href="../exercise3.html">Exercise3</a>
+        <a href="../exercise4.html">Exercise4</a>
+        <a href="../exercise5.html">Exercise5</a>
+        <a href="../exercise6.html">Exercise6</a>
+        <a href="../exercise7.html">Exercise7</a>
+    </div>
+</body>
+</html>
